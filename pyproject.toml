@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "bayer-home-assignment"
+version = "0.1.0"
+description = ""
+authors = ["Rodion Proskuryakov <rproskuryakov.job@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.11"
+jupyter = "^1.0.0"
+seaborn = "^0.11.2"
+torch = "^1.11.0"
+matplotlib = "^3.5.1"
+pandas = "^1.4.2"
+scipy = "^1.8.0"
+numpy = "^1.22.3"
+nltk = "^3.7"
+openpyxl = "^3.0.9"
+scikit-learn = "^1.0.2"
+spacy = "^3.2.4"
+scispacy = "^0.5.0"
+en-core-sci-md = {url = "https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.0/en_core_sci_md-0.5.0.tar.gz"}
+en-ner-bionlp13cg-md = {url = "https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.0/en_ner_bionlp13cg_md-0.5.0.tar.gz"}
+wordcloud = "^1.8.1"
+textblob = "^0.17.1"
+textstat = "^0.7.3"
+en-ner-bc5cdr-md = {url = "https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.0/en_ner_bc5cdr_md-0.5.0.tar.gz"}
+
+[tool.poetry.dev-dependencies]
+mypy = "^0.942"
+pytest = "^7.1.1"
+black = "^22.3.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
