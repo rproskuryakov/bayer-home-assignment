@@ -49,7 +49,7 @@ One can assign an auxiliary sentence to each class. Then, we solve a binary clas
 
 # Links
 
-* [microsoft / BiomedNLP-PubMedBERT-base-uncased-abstract](microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract-fulltext)
+* [microsoft / BiomedNLP-PubMedBERT-base-uncased-abstract](https://huggingface.co/microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract-fulltext)
 * [Utilizing BERT for Aspect-Based Sentiment Analysis
 via Constructing Auxiliary Sentence](https://arxiv.org/abs/1903.09588)
 
