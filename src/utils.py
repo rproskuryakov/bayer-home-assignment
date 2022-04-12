@@ -74,15 +74,9 @@ def predict_label_for_aux_sentence_model(text, model, tokenizer, label_to_statem
                 attention_mask=torch.FloatTensor(attention_mask).reshape(-1, 1),
                 return_dict=True,
             )
-        proba = np.min(outputs.logits.detach().cpu().numpy())
-        text_probabilities[key] = proba
+        text_probabilities[key] = outputs.logits[0, 0].detach().cpu().numpy()
 
-    min_proba = float("+inf")
-    best_cat = None
-    for category, probability in text_probabilities.items():
-        if probability < min_proba:
-            min_proba = probability
-            best_cat = category
+    best_cat, _ = max(text_probabilities.items(), key=lambda x: x[1])
     return best_cat
 
 
