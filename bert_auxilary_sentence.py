@@ -5,14 +5,11 @@ import sys
 import warnings
 
 import numpy as np
-import pandas as pd
 import torch
 import torch.nn as nn
 from sklearn.metrics import f1_score
 from sklearn.metrics import precision_score
 from sklearn.metrics import recall_score
-import tqdm
-from sklearn.model_selection import train_test_split
 from sklearn.utils import compute_class_weight
 from torch.utils.data import DataLoader
 from transformers import AdamW
@@ -37,7 +34,7 @@ warnings.simplefilter("ignore")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="Fine-tune BERT model for sentiment classification task on sentence and auxilary sentence."
+        description="Fine-tune BERT model for sentiment classification task on sentence and auxiliary sentence."
     )
     parser.add_argument("dataset_path", type=pathlib.Path)
     parser.add_argument("--batch_size", type=int, default=8)
@@ -186,11 +183,11 @@ if __name__ == "__main__":
     ]
 
     logger.info(
-        "F1 Macro ON PROPER VALIDATION: %.2f"
+        "Macro F1 on untransformed dataset: %.2f"
         % f1_score(test_target, predicted_labels, average="macro")
     )
     logger.info(
-        "MACRO Precision on untransformed dataset: %.2f"
+        "Macro Precision on untransformed dataset: %.2f"
         % precision_score(test_target, predicted_labels, average="macro")
     )
     logger.info(
