@@ -30,7 +30,7 @@ if __name__ == "__main__":
         description="Fine-tune BERT model for sentiment classification task."
     )
     parser.add_argument("dataset_path", type=pathlib.Path)
-    parser.add_argument("--batch_size", type=int, default=32)
+    parser.add_argument("--batch_size", type=int, default=16)
     parser.add_argument("--learning_rate", type=float, default=5e-5)
     parser.add_argument("--n_epochs", type=int, default=1)
     parser.add_argument("--max_grad_norm", type=float, default=1.0)
@@ -70,6 +70,7 @@ if __name__ == "__main__":
         train_target.tolist(),
         tokenizer=tokenizer,
         label_to_id=LABEL_TO_ID,
+        max_len=128,
     )
 
     test_dataset = src.datasets.SentimentAnalysisExcelDataset(
@@ -77,6 +78,7 @@ if __name__ == "__main__":
         test_target.tolist(),
         tokenizer=tokenizer,
         label_to_id=LABEL_TO_ID,
+        max_len=128,
     )
 
     train_dataloader = DataLoader(
